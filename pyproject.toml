@@ -1,0 +1,10 @@
+[project]
+name = "xiaomei"
+version = "0.1.0"
+description = "AI agent that solves CTF problems on its own"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/xiaomei"]
