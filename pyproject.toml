@@ -4,7 +4,30 @@ version = "0.1.0"
 description = "AI agent that solves CTF problems on its own"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "langchain>=0.3.17",
+    "langchain-openai>=0.3.3",
+    "langfuse>=2.58.1",
+    "pydantic>=2.10.6",
+]
+
+[dependency-groups]
+dev = [
+    "rich>=13.9.4",
+    "rich-gradient>=0.1.7",
+]
+yangmei = [
+    "docker>=7.1.0",
+]
+
+[tool.uv]
+default-groups = ["yangmei", "dev"]
+
+[tool.ruff.lint]
+unfixable = [
+    "F401", # unused import
+    "F841", # unused variable
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/xiaomei"]
